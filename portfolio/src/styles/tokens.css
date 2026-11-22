@@ -1,0 +1,98 @@
+/*
+ * Design tokens — the single source of truth for color, type, space, and motion.
+ * Components reference these semantic variables, never raw values.
+ */
+
+:root {
+  /* Color: primitives */
+  --ink-950: #080808;
+  --ink-800: #2a2a2a;
+  --ink-500: #777777;
+  --ink-300: #aaaaaa;
+  --ink-150: #e5e5e5;
+  --ink-75: #f3f3f1;
+  --paper: #ffffff;
+  --lilac-100: #ecebf0;
+  --green-500: #00c214;
+
+  /* Color: semantic (light) */
+  --color-bg: var(--paper);
+  --color-surface: var(--ink-75);
+  --color-surface-tint: var(--lilac-100);
+  --color-border: var(--ink-150);
+  --color-text: var(--ink-950);
+  --color-text-muted: var(--ink-500);
+  --color-inverse-bg: var(--ink-950);
+  --color-inverse-text: var(--paper);
+  --color-status: var(--green-500);
+
+  /* Typography */
+  --font-display: 'Instrument Serif', 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1.125rem, 1rem + 0.4vw, 1.3rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-2xl: clamp(2.25rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-display: clamp(3rem, 1.5rem + 6vw, 7rem);
+  --text-wordmark: clamp(3rem, 14vw, 14rem);
+
+  --leading-display: 0.95;
+  --leading-tight: 1.15;
+  --leading-body: 1.6;
+  --tracking-display: -0.02em;
+  --tracking-label: 0.08em;
+
+  /* Space (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Shape */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --marquee-duration: 40s;
+
+  /* Layout */
+  --container: 80rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-height: 4.5rem;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--ink-950);
+    --color-surface: #141414;
+    --color-surface-tint: #1b1a22;
+    --color-border: #262626;
+    --color-text: #f5f5f3;
+    --color-text-muted: #8f8f8f;
+    --color-inverse-bg: #f5f5f3;
+    --color-inverse-text: var(--ink-950);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}
